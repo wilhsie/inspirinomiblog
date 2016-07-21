@@ -1,0 +1,35 @@
+<h1>inspirinomiblog</h1>
+
+trial of earth <br></br>
+"  i must learn true strength; it can only be achieved by true discipline  "
+<br></br>
+<%= link_to 'Enter', controller: 'articles' %>
+<br>
+<%= link_to 'Add Playlist', new_playlist_path %>
+
+
+<p>
+<strong>Title:</strong>
+  <%= @playlist.title %>
+</p>
+
+<p>
+  <iframe src='<%= @playlist.url %>' frameborder="0" allowfullscreen></iframe>
+</p>
+
+<p>
+  <strong>Time of Day:</strong>
+  <%= @playlist.timeOfDay %>
+</p>
+
+<p>
+  <strong>Type Of Weather:</strong>
+  <%= @playlist.typeOfWeather %>
+</p>
+
+<button id="getLocation">Get Location</button>
+<div id="locationLoading">
+  <p>Requesting Location ...</p>
+</div>
+
+<div id="displayPosition"></div>

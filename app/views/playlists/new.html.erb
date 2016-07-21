@@ -1,0 +1,29 @@
+<% # make a new form for collecting playlists %>
+
+<h1>Create a new playlist entry:</h1>
+
+<%= form_for :playlist, url: playlists_path do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </p>
+
+  <p>
+    <%= f.label 'Time of Day' %>
+    <%= f.select :timeOfDay, [['Twilight', 'twilight'], ['Morning', 'morning'], ['Afternoon', 'afternoon'], ['Night', 'night']] %>
+  </p>
+
+  <p>
+    <%= f.label 'Type of Weather' %>
+    <%= f.select :typeOfWeather, [['Clear', 'clear'], ['Cloudy', 'cloudy'], ['Rainy', 'rainy']] %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
