@@ -5,11 +5,11 @@ $(document).ready(function(){
   $("#getLocation").click(function() {
     $("#locationLoading").show();
     navigator.geolocation.getCurrentPosition(geoSuccess);
-  });
+  })
 
   function geoSuccess(location) {
     alert(location.coords.latitude  + ", " + location.coords.longitude);
-    $.post('/', 
+    var jqxhr = $.post('/welcome/index', 
            {
              lat: location.coords.latitude, 
              lng: location.coords.longitude

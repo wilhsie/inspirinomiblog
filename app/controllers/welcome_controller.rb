@@ -8,10 +8,11 @@ class WelcomeController < ApplicationController
     
     @playlist = Playlist.where(typeOfWeather: 'rainy', timeOfDay: 'twilight').take
 
-    @latLng = [params[:lat], params[:lng]]
-  end 
+    @latLng = [params[:lat], params[:lng]]  
   
-  private def callWundergroundAPI 
+    if @latLng[0] != nil
+      #  call wunderground API
+    end
   end
 
 end
