@@ -9,7 +9,9 @@ $(document).ready(function(){
 
   function geoSuccess(location) {
     alert(location.coords.latitude  + ", " + location.coords.longitude);
-    var jqxhr = $.post('/welcome/index', 
+    
+
+    /*var jqxhr = $.post('/welcome/index', 
            {
              lat: location.coords.latitude, 
              lng: location.coords.longitude
@@ -18,6 +20,11 @@ $(document).ready(function(){
              console.log(response);
              $("#displayPosition").html("Success");
            });
+    */
+
+    var cookieValue = location.coords.latitude + "|" + location.coords.longitude;
+    document.cookie = "latLng=" + escape(cookieValue);
+
     $("#locationLoading").hide();
   } 
 

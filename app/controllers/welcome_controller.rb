@@ -8,10 +8,12 @@ class WelcomeController < ApplicationController
     
     @playlist = Playlist.where(typeOfWeather: 'rainy', timeOfDay: 'twilight').take
 
-    @latLng = [params[:lat], params[:lng]]  
+    #@latLng = [params[:lat], params[:lng]]  
   
-    if @latLng[0] != nil
+    if cookies[:latLng] != nil
+      @latLng = cookies[:latLng].split("|")
       #  call wunderground API
+      
     end
   end
 
